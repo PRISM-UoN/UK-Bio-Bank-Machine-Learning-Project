@@ -86,168 +86,169 @@ The following data (replicated from Box 1 in the PLOS publication) are the predi
 
 In all codes, file paths need to be changed to your local working directories. The code runs on the basis of creating two text tab delimited data files from the UK Bio Bank. The full cohort needs to be split randomly 75% and 25%. Remember when you conduct the random split - make sure to set your seed to be able to replicate the split. You should save these as .txt files and derivation cohort "derivation.txt" and validation cohort "validation.txt" and place these in your R working directory. You can elect to change your variable names but for maximise consistency with the codes, you can adopt the ones used in this project:
 
-n_eid
-gender
-birthyear
-waist
-height
-birthmonth
-townsend
-fev1
-diabp
-sysbp
-education
-vitamin
-bmi
-weight
-baselineage
-bodyfat
-startdate
-deathdate
-ethnicity
-famhistBC
-famhistPC
-famhistLC
-famhistCC
-famhistMBC
-walkperday
-walkperweek
-modperday
-modperweek
-vigperday
-vigperweek
-walkMETmin
-modMETmin
-vigMETmin
-METmin
-smoking
-cigperday
-stopsmoke
-agestop
-smokingstatus
-ets
-etsmoke
-carotene
-calcium
-alcohol
-dried
-fresh
-fruitpieces
-fruit
-salad
-cooked
-vegpieces
-veg
-beef
-pork
-processmeat
-cereal
-cheese
-salt
-milk
-fish
-sunscreen
-pollution
-jobexp
-skin
-darken
-hpylori
-aspirin
-warfarin
-digoxin
-metformin
-radiotherapy
-menopause
-contra
-hrt
-statins
-bptreat
-brdisease
-plasia
-coeliac
-thyroid
-diabetes
-polyps
-crohns
-reflux
-prostate
-priorcancer
-priorchd
-priorstroke
-priordiabetes
-priorcopd
-priordem
-hd_diag
-stroke_diag
-dia_diag
-res_diag
-dem_diag
-can_pros_diag
-can_br_diag
-can_lung_diag
-can_colo_diag
-can_sto_diag
-can_skin_diag
-hd2_diag
-stroke2_diag
-dia2_diag
-res2_diag
-dem2_diag
-can2_pros_diag
-can2_br_diag
-can2_lung_diag
-can2_colo_diag
-can2_sto_diag
-can2_skin_diag
-can3_pros_diag
-can3_br_diag
-can3_lung_diag
-can3_colo_diag
-can3_sto_diag
-can3_skin_diag
-chd_diag
-cva_diag
-dm_diag
-copd_diag
-dementia_diag
-pros_cancer
-br_cancer
-lung_cancer
-colo_cancer
-sto_cancer
-skin_cancer
-primary_noncancer
-primary_cancer
-primary_diag
-secondary_noncancer
-secondary_cancer
-secondary_diag
-registry_cancer
-cancer_diag
-all_diag
-logweight
-logheight
-logbmi
-logwaist
-logbf
-logdiabp
-logsysbp
-logfev
-logMET
-logcig
-logtownsend
-missweight
-missheight
-missbmi
-misswaist
-missbf
-missdiabp
-misssysbp
-missfev
-missMET
-misscig
-misstown
-death
+	n_eid
+	gender
+	birthyear
+	waist
+	height
+	birthmonth
+	townsend
+	fev1
+	diabp
+	sysbp
+	education
+	vitamin
+	bmi
+	weight
+	baselineage
+	bodyfat
+	startdate
+	deathdate
+	ethnicity
+	famhistBC
+	famhistPC
+	famhistLC
+	famhistCC
+	famhistMBC
+	walkperday
+	walkperweek
+	modperday
+	modperweek
+	vigperday
+	vigperweek
+	walkMETmin
+	modMETmin
+	vigMETmin
+	METmin
+	smoking
+	cigperday
+	stopsmoke
+	agestop
+	smokingstatus
+	ets
+	etsmoke
+	carotene
+	calcium
+	alcohol
+	dried
+	fresh
+	fruitpieces
+	fruit
+	salad
+	cooked
+	vegpieces
+	veg
+	beef
+	pork
+	processmeat
+	cereal
+	cheese
+	salt
+	milk
+	fish
+	sunscreen
+	pollution
+	jobexp
+	skin
+	darken
+	hpylori
+	aspirin
+	warfarin
+	digoxin
+	metformin
+	radiotherapy
+	menopause
+	contra
+	hrt
+	statins
+	bptreat
+	brdisease
+	plasia
+	coeliac
+	thyroid
+	diabetes
+	polyps
+	crohns
+	reflux
+	prostate
+	priorcancer
+	priorchd
+	priorstroke
+	priordiabetes
+	priorcopd
+	priordem
+	hd_diag
+	stroke_diag
+	dia_diag
+	res_diag
+	dem_diag
+	can_pros_diag
+	can_br_diag
+	can_lung_diag
+	can_colo_diag
+	can_sto_diag
+	can_skin_diag
+	hd2_diag
+	stroke2_diag
+	dia2_diag
+	res2_diag
+	dem2_diag
+	can2_pros_diag
+	can2_br_diag
+	can2_lung_diag
+	can2_colo_diag
+	can2_sto_diag
+	can2_skin_diag
+	can3_pros_diag
+	can3_br_diag
+	can3_lung_diag
+	can3_colo_diag
+	can3_sto_diag
+	can3_skin_diag
+	chd_diag
+	cva_diag
+	dm_diag
+	copd_diag
+	dementia_diag
+	pros_cancer
+	br_cancer
+	lung_cancer
+	colo_cancer
+	sto_cancer
+	skin_cancer
+	primary_noncancer
+	primary_cancer
+	primary_diag
+	secondary_noncancer
+	secondary_cancer
+	secondary_diag
+	registry_cancer
+	cancer_diag
+	all_diag
+	logweight
+	logheight
+	logbmi
+	logwaist
+	logbf
+	logdiabp
+	logsysbp
+	logfev
+	logMET
+	logcig
+	logtownsend
+	missweight
+	missheight
+	missbmi
+	misswaist
+	missbf
+	missdiabp
+	misssysbp
+	missfev
+	missMET
+	misscig
+	misstown
+	death
+
 
 
 
