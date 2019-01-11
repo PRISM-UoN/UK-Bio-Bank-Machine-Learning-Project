@@ -28,7 +28,7 @@ library(ggrepel)
 
 
 #Set the working directory to the one drive - remember to change the name before running
-setwd("C:/Users/mczsfw/OneDrive - The University of Nottingham/UK Bio Bank/Machine Learning") 
+setwd("insert your working directory here") 
 
 #Custom plotting theme
 my_theme <- function(base_size = 12, base_family = "sans"){
@@ -373,6 +373,6 @@ colnames(dl_complete) <- c("n_eid", "dl_prob")
 
 #export into stata file
 library(foreign)
-write.dta(dl_complete, "C:/Users/mczsfw/OneDrive - The University of Nottingham/UK Bio Bank/Machine Learning/dl_complete.dta")
+write.dta(dl_complete, "insert file path and name of deep learning model outputs in your working directory")
 
 
