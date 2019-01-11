@@ -1,9 +1,9 @@
-use "C:\Users\mczsfw\OneDrive - The University of Nottingham\UK Bio Bank\Machine Learning\DerivationCohort_research.dta", clear
+use "insert derivation cohort file path here", clear
 
 *Derivation Cohort*
 gen cohort = 0
 
-append using "C:\Users\mczsfw\OneDrive - The University of Nottingham\UK Bio Bank\Machine Learning\ValidationCohort_research.dta"
+append using "insert validation cohort file from local file path here"
 
 *Validation Cohort*
 replace cohort = 1 if cohort ==. 
@@ -134,21 +134,17 @@ gen xbmean2 = agebeta2+genderbeta2
 
 gen prob_simple = 1 - (0.9713^exp(xb_simple - xbmean2)) if cohort == 1
 
-
-
 drop if cohort == 0
 
 
-merge 1:1 n_eid using "C:\Users\mczsfw\OneDrive - The University of Nottingham\UK Bio Bank\Machine Learning\rf_complete.dta"
+merge 1:1 n_eid using "local file path containing random forest results"
 
 drop _merge
 
 merge 1:1 n_eid using "C:\Users\mczsfw\OneDrive - The University of Nottingham\UK Bio Bank\Machine Learning\dl_complete.dta"
 
-save "C:\Users\mczsfw\OneDrive - The University of Nottingham\UK Bio Bank\Machine Learning\validation_cohort_fullpred.dta", replace
+save "save file to local directory file path", replace
 
-
-use "C:\Users\mczsfw\OneDrive - The University of Nottingham\UK Bio Bank\Machine Learning\validation_cohort_fullpred.dta", clear
 
 
 *Testing over all predictive accuracy*
