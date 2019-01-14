@@ -2,6 +2,8 @@
 
 STATA do file and R Scripts for UKB All-Cause Mortality Prediction Project
 
+Hardware configuration: Intel Xeon W-2123 Processor, 32GB RAM, 256GB SSD, 1TB HD, Nvidia P400 GFX
+
 The project files include:
 
 1) Cox Models.do - STATA file for running Cox regression models, generating ROC curves and AUC for comparing the outputs of Cox models against Machine-learning models
