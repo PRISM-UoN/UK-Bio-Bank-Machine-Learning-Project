@@ -25,7 +25,7 @@ library(ggplot2)
 library(ggrepel)
 
 #Set the working directory to the one drive - remember to change the name before running
-setwd("C:/Users/mczsfw/OneDrive - The University of Nottingham/UK Bio Bank/Machine Learning") 
+setwd("insert filepath of local working directory") 
 
 #Custom plotting theme
 my_theme <- function(base_size = 12, base_family = "sans"){
@@ -117,7 +117,7 @@ colnames(rf1_complete) <- c("n_eid", "rf_prob")
 
 #export into stata file
 library(foreign)
-write.dta(rf1_complete, "C:/Users/mczsfw/OneDrive - The University of Nottingham/UK Bio Bank/Machine Learning/rf_complete.dta")
+write.dta(rf1_complete, "insert filepath and name of your random forest prediction results")
 
 
 
