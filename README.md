@@ -19,7 +19,7 @@ R Packages required are specified in all the above code. For STATA, generation o
 
 Documentation on using h20, hyperparameter tuning ands selection can be found here: http://docs.h2o.ai/
 
-Access to UK Bio Bank is governed by the UK Bio Bank access commitee at the University of Oxford. Applications are reviewed and approvals granted subject to meeting all ethical and research conditions set forth by the UK Bio Bank. Further information on data access can be found at https://www.ukbiobank.ac.uk/ 
+Access to UK Bio Bank is governed by the UK Bio Bank access commitee at the University of Oxford. Applications are reviewed and approvals granted subject to meeting all ethical and research conditions set forth by the UK Bio Bank. Further information on data access can be found at https://www.ukbiobank.ac.uk/. Researchers should request the full bulk data file. 
 
 The following data (replicated from Box 1 in the PLOS publication) are the predictor variables should be coded in the following structure:
 
@@ -86,7 +86,7 @@ The following data (replicated from Box 1 in the PLOS publication) are the predi
 	Previously diagnosed with chronic obstructive pulmonary disease [COPD] (no; yes)
 
 
-In all codes, file paths need to be changed to your local working directories. The code runs on the basis of creating two text tab delimited data files from the UK Bio Bank. The full cohort needs to be split randomly 75% and 25%. Remember when you conduct the random split - make sure to set your seed to be able to replicate the split. You should save these as .txt files and derivation cohort "derivation.txt" and validation cohort "validation.txt" and place these in your R working directory. You can elect to change your variable names but for maximise consistency with the codes, you can adopt the ones used in this project:
+In all codes, file paths need to be changed to your local working directories. To recreate the dataset, researcher can run the provided do-file "UKBiobank variable creation STATA do-file" provided. This will recreate the variables below in its entirety. The code runs on the basis of creating two text tab delimited data files from the UK Bio Bank. The full cohort needs to be split randomly 75% and 25%. Remember when you conduct the random split - make sure to set your seed to be able to replicate the split. You should save these as .txt files and derivation cohort "derivation.txt" and validation cohort "validation.txt" and place these in your R working directory. You can elect to change your variable names but for maximise consistency with the codes, you can adopt the ones used in this project:
 
 	n_eid
 	gender
